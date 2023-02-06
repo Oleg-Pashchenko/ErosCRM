@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Мои магазины</title>
+</head>
+<body>
+<div class="header bg-light d-flex justify-content-between align-items-center p-3">
+    <h1 class="m-0">Мои магазины</h1>
+    <div>
+        <p class="m-0">{{ email }}</p>
+        <button class="btn btn-success" id="add-shop-button"><a href="/add-shop" style="color:white">Добавить
+            магазин</a></button>
+        <button class="btn btn-primary" id="logout-button"><a href="/login" style="color:white">Выйти из
+            профиля</a></button>
+
+    </div>
+</div>
+<div class="card-deck mt-5">
+    {% for shop in shops %}
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">{{ shop.name }}</h2>
+                <button class="btn btn-success" id="go-shop-button"><a href="{{ shop.owner_id }}/{{ shop.name }}"
+                                                                       style="color:white">Перейти
+                    в магазин</a></button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
