@@ -86,8 +86,9 @@
                 <span class="navbar-text mr-3">Текущий пользователь: {{ username }}</span>
             </li>
             <li class="nav-item">
-                <button class="btn btn-danger" type="button"><a href="/login" style="color:white">Выйти</a></button>
-
+                <form action="/logout" method="post">
+                    <button class="btn btn-danger" type="button"><a href="/login" style="color:white">Выйти</a></button>
+                </form>
             </li>
         </ul>
     </div>
@@ -96,10 +97,62 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <a href="/shops/add-ozon">
+                <a href="/shops">
                     <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится api_key, client_id и ссылка на магазин</p>
+                        <h5 class="card-title">Магазины</h5>
+                        <p class="card-text">Управление магазинами и продуктами</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <a href="/storages">
+                    <div class="card-body">
+                        <h5 class="card-title">Склады</h5>
+                        <p class="card-text">Управление складами</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <a href="/strategies">
+                    <div class="card-body">
+                        <h5 class="card-title">Стратегии</h5>
+                        <p class="card-text">Управление стратегиями и оптимизация процессов</p>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <a href="/servers">
+                    <div class="card-body">
+                        <h5 class="card-title">Сервера парсинга поставщиков</h5>
+                        <p class="card-text">Управление серверами и конфигурацией</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <a href="/servers">
+                    <div class="card-body">
+                        <h5 class="card-title">Сервера добавления товаров</h5>
+                        <p class="card-text">Управление серверами и конфигурацией</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <a href="/account-info">
+                    <div class="card-body">
+                        <h5 class="card-title">Общая сводка</h5>
+                        <p class="card-text">Информация о сервере</p>
                     </div>
                 </a>
             </div>
@@ -108,34 +161,22 @@
             <div class="card">
                 <a href="/instruction">
                     <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Wildberries</h5>
-                        <p class="card-text">Понадобится ...</p>
+                        <h5 class="card-title">Инструкция</h5>
+                        <p class="card-text">То самое how to do</p>
                     </div>
                 </a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card">
-                <a href="/shops/instruction">
+                <a href="/instruction">
                     <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится ...</p>
+                        <h5 class="card-title">Продажи</h5>
+                        <p class="card-text">Анализируем и понимаем что нужно</p>
                     </div>
                 </a>
             </div>
         </div>
-        {% for shop in shops_info %}
-            <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/{{ shop.api_token }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ shop.shop_name }}</h5>
-                        <p class="card-text">{{ shop.shop_link }}</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% endfor %}
     </div>
 </div>
 </body>

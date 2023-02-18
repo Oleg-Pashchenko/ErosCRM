@@ -92,51 +92,19 @@
         </ul>
     </div>
 </nav>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/add-ozon">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится api_key, client_id и ссылка на магазин</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/instruction">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Wildberries</h5>
-                        <p class="card-text">Понадобится ...</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/instruction">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится ...</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% for shop in shops_info %}
-            <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/{{ shop.api_token }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ shop.shop_name }}</h5>
-                        <p class="card-text">{{ shop.shop_link }}</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+<div class="container">
+<form method="POST" action="/storages/add-storage">
+  <div class="form-group">
+      <br/>
+    <label for="storage-name">Название склада:</label>
+    <input type="text" class="form-control" id="storage-name" name="storage-name" required>
+  </div>
+  <div class="form-group">
+    <label for="storage-decsr">Описание склада:</label>
+    <input type="text" class="form-control" id="storage-decsr" name="storage-descr" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Добавить склад</button>
+</form>
 </div>
 </body>
 </html>

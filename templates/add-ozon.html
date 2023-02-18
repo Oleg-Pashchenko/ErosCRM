@@ -92,51 +92,27 @@
         </ul>
     </div>
 </nav>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/add-ozon">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится api_key, client_id и ссылка на магазин</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/instruction">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Wildberries</h5>
-                        <p class="card-text">Понадобится ...</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/instruction">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится ...</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% for shop in shops_info %}
-            <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/{{ shop.api_token }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ shop.shop_name }}</h5>
-                        <p class="card-text">{{ shop.shop_link }}</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+<div class="container">
+<form method="POST" action="/shops/add-ozon">
+  <div class="form-group">
+      <br/>
+    <label for="shop-name">Название магазина:</label>
+    <input type="text" class="form-control" id="shop-name" name="shop-name" required>
+  </div>
+  <div class="form-group">
+    <label for="shop-link">Ссылка на магазин:</label>
+    <input type="url" class="form-control" id="shop-link" name="shop-link" required>
+  </div>
+  <div class="form-group">
+    <label for="api-token">Api_Token:</label>
+    <input type="text" class="form-control" id="api-token" name="api-token" required>
+  </div>
+  <div class="form-group">
+    <label for="client-id">Client_Id:</label>
+    <input type="text" class="form-control" id="client-id" name="client-id" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Добавить магазин</button>
+</form>
 </div>
 </body>
 </html>

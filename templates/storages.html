@@ -96,41 +96,21 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <a href="/shops/add-ozon">
+                <a href="/storages/add-storage">
                     <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится api_key, client_id и ссылка на магазин</p>
+                        <h5 class="card-title">Добавить склад</h5>
+                        <p class="card-text">Понадобится только фантазия</p>
                     </div>
                 </a>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/instruction">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Wildberries</h5>
-                        <p class="card-text">Понадобится ...</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <a href="/shops/instruction">
-                    <div class="card-body">
-                        <h5 class="card-title">Добавить магазин Ozon</h5>
-                        <p class="card-text">Понадобится ...</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        {% for shop in shops_info %}
+        {% for storage in storages_info %}
             <div class="col-md-4">
             <div class="card">
-                <a href="/shops/{{ shop.api_token }}">
+                <a href="/storages/{{ storage.storage_name }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ shop.shop_name }}</h5>
-                        <p class="card-text">{{ shop.shop_link }}</p>
+                        <h5 class="card-title">{{ storage.storage_name }}</h5>
+                        <p class="card-text">{{ storage.storage_descr }}</p>
                     </div>
                 </a>
             </div>
